@@ -61,28 +61,34 @@
             font-weight: 500;
         }
 
-        /* Кнопки скачивания */
         .download-section {
             display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
             margin: 25px 0 15px;
+        }
+
+        .download-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .download-btn {
             display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 16px 40px;
+            padding: 14px 24px;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
             transition: transform 0.3s, box-shadow 0.3s;
             border: none;
             cursor: pointer;
-            min-width: 200px;
+            min-width: 160px;
         }
 
         .download-btn:hover {
@@ -90,25 +96,17 @@
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
 
-        .download-btn span {
-            display: block;
-            font-size: 11px;
-            font-weight: normal;
-            opacity: 0.8;
-            margin-top: 3px;
+        .download-btn.apk {
+            background: linear-gradient(135deg, #43a047 0%, #66bb6a 100%);
+            min-width: 220px;
+            font-size: 16px;
+            padding: 16px 30px;
         }
 
-        .system-requirements {
+        .download-label {
+            font-size: 14px;
             color: #888;
-            font-size: 13px;
-            margin: 10px 0 20px;
-        }
-
-        .system-requirements span {
-            background: #f0f0f5;
-            padding: 3px 12px;
-            border-radius: 12px;
-            margin: 0 4px;
+            margin-top: 5px;
         }
 
         .features {
@@ -190,13 +188,13 @@
             .features { grid-template-columns: repeat(3, 1fr); }
             .feature { padding: 10px 5px; font-size: 11px; }
             .feature span { font-size: 22px; }
-            .download-btn { padding: 14px 20px; font-size: 14px; min-width: 150px; }
+            .download-btn { padding: 12px 18px; font-size: 13px; min-width: 130px; }
+            .download-btn.apk { min-width: 180px; font-size: 14px; padding: 14px 24px; }
             .author .name { font-size: 18px; }
         }
 
         @media (max-width: 400px) {
             .features { grid-template-columns: repeat(2, 1fr); }
-            .download-section { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -215,16 +213,24 @@
             <span class="tech-item">📊 Excel</span>
         </div>
 
-        <!-- Кнопки скачивания -->
         <div class="download-section">
-            <a href="./files/StockPanty.apk" class="download-btn" download>
+            <a href="./files/colgotkiii.apk" class="download-btn apk" download>
                 📱 Скачать APK
-                <span>Android 8.0+ · ~15 MB</span>
             </a>
-            <a href="./files/StockPanty.exe" class="download-btn" download>
-                💻 Скачать EXE
-                <span>Windows 10/11 · ~30 MB</span>
-            </a>
+            <span class="download-label">Для установки на телефон</span>
+
+            <div class="download-row">
+                <a href="./files/PantyhoseApp_7z.001" class="download-btn" download>
+                    💾 Часть 1
+                </a>
+                <a href="./files/PantyhoseApp_7z.002" class="download-btn" download>
+                    💾 Часть 2
+                </a>
+                <a href="./files/PantyhoseApp_7z.003" class="download-btn" download>
+                    💾 Часть 3
+                </a>
+            </div>
+            <span class="download-label">Скачайте все 3 части и откройте .001 в 7-Zip для распаковки</span>
         </div>
 
         <div class="features">
@@ -244,8 +250,6 @@
 
         <div class="footer-links">
             <a href="https://vk.ru/id761217067">💬 Контакты</a>
-            <a href="#">📖 Документация</a>
-            <a href="#">🐛 Сообщить об ошибке</a>
         </div>
     </div>
 </body>
