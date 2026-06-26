@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление каталогом колготок</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 850px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .icon { font-size: 80px; margin-bottom: 15px; }
+
+        h1 { color: #333; font-size: 34px; margin-bottom: 10px; }
+
+        .version {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .subtitle { color: #666; font-size: 18px; margin-bottom: 25px; }
+
+        .tech {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tech-item {
+            background: #f0f0f5;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* Кнопки скачивания */
+        .download-section {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 25px 0 15px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            min-width: 200px;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-btn span {
+            display: block;
+            font-size: 11px;
+            font-weight: normal;
+            opacity: 0.8;
+            margin-top: 3px;
+        }
+
+        .system-requirements {
+            color: #888;
+            font-size: 13px;
+            margin: 10px 0 20px;
+        }
+
+        .system-requirements span {
+            background: #f0f0f5;
+            padding: 3px 12px;
+            border-radius: 12px;
+            margin: 0 4px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            padding: 15px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            color: #333;
+            transition: transform 0.2s;
+        }
+
+        .feature:hover {
+            transform: translateY(-3px);
+            background: #f0f0ff;
+        }
+
+        .feature span {
+            display: block;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .author {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 2px solid #eee;
+        }
+
+        .author .label {
+            color: #999;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .author .name {
+            font-size: 22px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 5px;
+        }
+
+        .author .year {
+            color: #bbb;
+            font-size: 12px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 13px;
+        }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: #667eea; }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 26px; }
+            .subtitle { font-size: 15px; }
+            .features { grid-template-columns: repeat(3, 1fr); }
+            .feature { padding: 10px 5px; font-size: 11px; }
+            .feature span { font-size: 22px; }
+            .download-btn { padding: 14px 20px; font-size: 14px; min-width: 150px; }
+            .author .name { font-size: 18px; }
+        }
+
+        @media (max-width: 400px) {
+            .features { grid-template-columns: repeat(2, 1fr); }
+            .download-section { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🧦</div>
+
+        <h1>Управление каталогом колготок</h1>
+        <div class="version">Версия 1.0.0</div>
+        <p class="subtitle">Простое и удобное приложение для управления ассортиментом колготок</p>
+
+        <div class="tech">
+            <span class="tech-item">🐍 Python</span>
+            <span class="tech-item">🖥️ PyQt5</span>
+            <span class="tech-item">🐼 Pandas</span>
+            <span class="tech-item">📊 Excel</span>
+        </div>
+
+        <!-- Кнопки скачивания -->
+        <div class="download-section">
+            <a href="./files/StockPanty.apk" class="download-btn" download>
+                📱 Скачать APK
+                <span>Android 8.0+ · ~15 MB</span>
+            </a>
+            <a href="./files/StockPanty.exe" class="download-btn" download>
+                💻 Скачать EXE
+                <span>Windows 10/11 · ~30 MB</span>
+            </a>
+        </div>
+
+        <div class="features">
+            <div class="feature"><span>📋</span>Просмотр</div>
+            <div class="feature"><span>➕</span>Добавление</div>
+            <div class="feature"><span>✏️</span>Редактирование</div>
+            <div class="feature"><span>🗑️</span>Удаление</div>
+            <div class="feature"><span>🔍</span>Фильтрация</div>
+            <div class="feature"><span>📊</span>Сортировка</div>
+        </div>
+
+        <div class="author">
+            <span class="label">Разработчик</span>
+            <div class="name">Воронков А.Ю.</div>
+            <span class="year">© 2026 Все права защищены</span>
+        </div>
+
+        <div class="footer-links">
+            <a href="https://vk.ru/id761217067">💬 Контакты</a>
+            <a href="#">📖 Документация</a>
+            <a href="#">🐛 Сообщить об ошибке</a>
+        </div>
+    </div>
+</body>
+</html>
