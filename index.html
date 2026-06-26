@@ -69,13 +69,6 @@
             margin: 25px 0 15px;
         }
 
-        .download-row {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
         .download-btn {
             display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -98,6 +91,12 @@
 
         .download-btn.apk {
             background: linear-gradient(135deg, #43a047 0%, #66bb6a 100%);
+            min-width: 220px;
+            font-size: 16px;
+            padding: 16px 30px;
+        }
+
+        .download-btn.desktop {
             min-width: 220px;
             font-size: 16px;
             padding: 16px 30px;
@@ -189,7 +188,7 @@
             .feature { padding: 10px 5px; font-size: 11px; }
             .feature span { font-size: 22px; }
             .download-btn { padding: 12px 18px; font-size: 13px; min-width: 130px; }
-            .download-btn.apk { min-width: 180px; font-size: 14px; padding: 14px 24px; }
+            .download-btn.apk, .download-btn.desktop { min-width: 180px; font-size: 14px; padding: 14px 24px; }
             .author .name { font-size: 18px; }
         }
 
@@ -214,23 +213,15 @@
         </div>
 
         <div class="download-section">
-            <a href="files/colgotkiii.apk" class="download-btn apk" download>
+            <a href="https://drive.google.com/uc?export=download&id=1JEhyXSeE8dVuiH63ftYUNdRZ4P3eKeUW" class="download-btn apk" target="_blank">
                 📱 Скачать APK
             </a>
             <span class="download-label">Для установки на телефон</span>
 
-            <div class="download-row">
-                <a href="files/PantyhoseApp_split.7z.001" class="download-btn" download>
-                    💾 Часть 1
-                </a>
-                <a href="files/PantyhoseApp_split.7z.002" class="download-btn" download>
-                    💾 Часть 2
-                </a>
-                <a href="files/PantyhoseApp_split.7z.003" class="download-btn" download>
-                    💾 Часть 3
-                </a>
-            </div>
-            <span class="download-label">Скачайте все 3 части и откройте .001 в 7-Zip для распаковки</span>
+            <a href="https://drive.google.com/uc?export=download&id=1EcI0or6OOcJP0rSYVP0QGLpeyw40lstq" class="download-btn desktop" target="_blank">
+                💻 Скачать для Windows
+            </a>
+            <span class="download-label">ZIP-архив с программой</span>
         </div>
 
         <div class="features">
